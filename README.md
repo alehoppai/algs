@@ -45,3 +45,16 @@ This algorithm consits of 2 tasks.
     1. If True -> reassign value to new `list[i]` and update index controlled by you to index from current iteration;
     2. If False -> do nothing;
 4. return controlled index.
+
+
+### Quick sort `./src/quick_sort.rs`. Worse O(n**2), Best O(n log n)
+
+Recursive sort. Defining a pivot point. Moving less than and greater than values from original array to appropriate different arrays. Running quick sort on them again. In the end merging all together. Complexety depends on pivot selection, most of the cases its O(n log n).
+
+1. Define base case to exit recursion. `arr.len < 2` or `arr.len <= 1`. Single array item is our base case.
+2. Define pivot, can be element at any posistion.
+3. Remove this element from original array
+4. Declare two arrays, right and left.
+5. Loop through original array, everything lesser than pivot -> push to left. And same but opposite to right.
+6. Recursievly call quick_sort again on both parts (left and right)
+7. Return contatinated array of (left, pivot, right)
